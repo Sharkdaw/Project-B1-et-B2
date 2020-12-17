@@ -14,6 +14,10 @@ public class Resources : MonoBehaviour
     int qtePerTime = 15; // Quantité de ressources produites tous les x temps
     int timeToGetResource = 5; // Temps nécessaire à la production de ressources
 
+
+    
+    
+
     // Variables propre au script
     int stock = 0; // Stock actuel du bâtiment
     float timer = 0; // Temps écoulé actuellement
@@ -34,7 +38,7 @@ public class Resources : MonoBehaviour
         switch (name)
         {
             case "Fer":
-                qteOnClick = 100;
+                qteOnClick = 25;
                 upgradePrice = 20;
                 break;
             case "Nickel":
@@ -60,9 +64,33 @@ public class Resources : MonoBehaviour
         }
     }
 
+
+    
+
     // Si on clique sur le bâtiment, on éxécute ce bloc
     void OnMouseOver() {
         if (Input.GetMouseButtonDown(0)) {
+            
+             if (stock >= 25)
+            {
+               stock -= qteOnClick;
+               
+
+            }
+            
+            
+
+
+          if (stock <= 0) {
+        stock = 0;
+
+          }
+
+    } 
+
+            
+            
+           
             /* 
                 1) vérifier qu'on ait suffisamment de ressources pour en récupérer
                 2) récupérer lesdites ressources
