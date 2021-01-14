@@ -9,21 +9,20 @@ public class Resources : MonoBehaviour
     public int level = 1; // Niveau du bâtiment (inutile pour le moment)
 
     // Variables qui dépendent du type de la ressource
-    int qteOnClick = 0; // Quantité de ressources récupérables au click sur le bâtiment
+    public int qteOnClick = 0; // Quantité de ressources récupérables au click sur le bâtiment
     int upgradePrice = 0; // Prix de l'augmentation de niveau (inutile pour le moment)
     int qtePerTime = 15; // Quantité de ressources produites tous les x temps
     int timeToGetResource = 5; // Temps nécessaire à la production de ressources
+    int resourceCooldown = 3; // Temps de récupération de la ressource
 
-
-    
-    
 
     // Variables propre au script
-    int stock = 0; // Stock actuel du bâtiment
+    public int stock = 90; // Stock actuel du bâtiment
     float timer = 0; // Temps écoulé actuellement
 
     TextMesh text; // Texte affiché au dessus du bâtiment
     ResourcesManager rm; // Ressource manager (le canvas)
+
 
     // Start is called before the first frame update
     void Start()
@@ -64,39 +63,15 @@ public class Resources : MonoBehaviour
         }
     }
 
-
-    
-
     // Si on clique sur le bâtiment, on éxécute ce bloc
     void OnMouseOver() {
         if (Input.GetMouseButtonDown(0)) {
             
-             if (stock >= 25)
-            {
-               stock -= qteOnClick;
-               
-
+            // Si on a assez de ressources, on les retire du stock et on les envoie dans l'inventaire du joueur
+            if (stock >= qteOnClick) {
+                stock -= qteOnClick;
+                rm.loadResource(name, qteOnClick, resourceCooldown);
             }
-            
-            
-
-
-          if (stock <= 0) {
-        stock = 0;
-
-          }
-
-    } 
-
-            
-            
-           
-            /* 
-                1) vérifier qu'on ait suffisamment de ressources pour en récupérer
-                2) récupérer lesdites ressources
-                3) supprimer les ressources du stock
-            */
-            rm.addResources(name, qteOnClick);
         }
     }
 
@@ -113,5 +88,9 @@ public class Resources : MonoBehaviour
 
         // Et on l'affiche
         text.text = name + " " + stock.ToString();
+    }
+
+    public void getSomeStock(int qte) {
+        stock -= qte;
     }
 }
