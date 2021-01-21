@@ -10,7 +10,6 @@ public class Planet : MonoBehaviour
     void Start()
     {
         startcolor = GetComponent<Renderer>().material.color;
-        
     }
 
     // Update is called once per frame

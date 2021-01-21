@@ -65,14 +65,6 @@ public class Resources : MonoBehaviour
 
     // Si on clique sur le bâtiment, on éxécute ce bloc
     void OnMouseOver() {
-        if (Input.GetMouseButtonDown(0)) {
-            
-            // Si on a assez de ressources, on les retire du stock et on les envoie dans l'inventaire du joueur
-            if (stock >= qteOnClick) {
-                stock -= qteOnClick;
-                rm.loadResource(name, qteOnClick, resourceCooldown);
-            }
-        }
     }
 
     // Update is called once per frame

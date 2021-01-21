@@ -9,6 +9,7 @@ public class Vehicule : MonoBehaviour
 
     Transform target; // On récupère le bâtiment de stockage
     GameObject targetPlanet; // La planète de destination
+    ResourcesManager rm; // Ressource manager (le canvas)
     
     Color startcolor; // Couleur de base de l'objet
     int stock = 0; // Ressources actuellement dans le vaisseau
@@ -18,6 +19,9 @@ public class Vehicule : MonoBehaviour
     {
         GameObject storageBuilding = GameObject.Find("StorageBuilding");
         target = storageBuilding.transform;
+
+        GameObject go = GameObject.Find("ResourceManager");
+        rm  = (ResourcesManager) go.GetComponent(typeof(ResourcesManager)); // On récupère le Canvas
 
         startcolor = GetComponent<Renderer>().material.color;
         
@@ -31,12 +35,13 @@ public class Vehicule : MonoBehaviour
         float step = speed * Time.deltaTime;
 
         if (targetPlanet != null) {
+            Resources planetScript = targetPlanet.transform.GetChild(0).GetComponent<Resources>();
+
             if (stock == 0) {
                 Transform pos = targetPlanet.transform.GetChild(0).gameObject.transform;
                 transform.position = Vector3.MoveTowards(transform.position, pos.position, step);
 
                 if (Vector3.Distance(transform.position, targetPlanet.transform.GetChild(0).gameObject.transform.position) < 50) {
-                    Resources planetScript = targetPlanet.transform.GetChild(0).GetComponent<Resources>();
                     int planetStock = planetScript.stock;
                     int planetQteMin = planetScript.qteOnClick;
 
@@ -49,14 +54,13 @@ public class Vehicule : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, target.position, step);
 
                 if (Vector3.Distance(transform.position, target.transform.position) < 50) {
+                    rm.addResources(planetScript.name, stock);
                     stock = 0;
-                    target.GetComponent<ResourcesManager>().addResources("Fer", stock);
                 }
             }
         }
 
         if (Input.GetMouseButtonDown (0)) {
-            isActive = false;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -64,8 +68,10 @@ public class Vehicule : MonoBehaviour
             {
                 if (hit.transform == transform)
                 {
-                    isActive = true;
+                    isActive = isActive ? false : true;
                 }
+            } else {
+                isActive = false;
             }
         }
         if (isActive) {
@@ -77,10 +83,5 @@ public class Vehicule : MonoBehaviour
 
     public void setTargetPlanet(GameObject tp) {
         targetPlanet = tp;
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        print("ok");
     }
 }

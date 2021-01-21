@@ -37,13 +37,14 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\ResourcesManager.cs" />
+     <Compile Include="Assets\Scripts\CameraControllerZQSD.cs" />
      <Compile Include="Assets\Scripts\ZoomCam.cs" />
      <Compile Include="Assets\Scripts\Resources.cs" />
      <Compile Include="Assets\Scripts\Vehicule.cs" />
+     <Compile Include="Assets\Scripts\Planet.cs" />
      <Compile Include="Assets\Scripts\CharacterMotor.cs" />
      <Compile Include="Assets\Scripts\Building.cs" />
-     <Compile Include="Assets\Scripts\CameraControllerZQSD.cs" />
-     <Compile Include="Assets\Scripts\Planet.cs" />
+     <Compile Include="Assets\Scripts\Commands.cs" />
      <None Include="Assets\Bolt\Ludiq\Ludiq.Core\DotNetDocumentation\System.Web.Extensions.Design.xml" />
      <None Include="Assets\Bolt\Ludiq\Ludiq.Core\DotNetDocumentation\Microsoft.Build.Engine.xml" />
      <None Include="Assets\Bolt\Ludiq\Bolt\Documentation\0. READ ME FIRST.txt" />
