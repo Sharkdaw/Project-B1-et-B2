@@ -23,6 +23,7 @@ public class Planet : MonoBehaviour
             {
                 if (hit.transform == transform)
                 {
+                    Debug.Log("Hello hello");
                     foreach (GameObject ship in GameObject.FindGameObjectsWithTag("Ship"))
                     {
                         if(ship.GetComponent<Vehicule>().isActive == true)

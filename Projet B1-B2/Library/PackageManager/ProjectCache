@@ -6,7 +6,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637438190450000000
+      ticks: 637480516690000000
     m_Hash: 1801475601
   m_LockFileStatus:
     m_FilePath: /Users/medrupaloscil/Desktop/Artline/Projets/Project-B1-et-B2/Projet
@@ -15,7 +15,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637438190460000000
+      ticks: 637480516700000000
     m_Hash: 2070423108
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -538,6 +538,7 @@ m_PackageAssets:
         - 1.2.15
         - 1.2.16
         - 1.2.17
+        - 1.2.18
         - 1.3.0-preview.2
         - 1.3.0-preview.3
         - 1.3.0-preview.5
@@ -550,6 +551,7 @@ m_PackageAssets:
         - 1.3.4
         - 1.3.5
         - 1.3.6
+        - 1.3.7
         - 1.4.0-preview.1
         - 1.4.0-preview.2
         - 1.4.0-preview.3
@@ -562,6 +564,7 @@ m_PackageAssets:
         - 1.4.3
         - 1.4.4
         - 1.4.5
+        - 1.4.6
         - 1.5.0-pre.2
         - 1.5.0-preview.1
         - 1.5.0-preview.2
@@ -571,6 +574,8 @@ m_PackageAssets:
         - 1.5.1-pre.1
         - 1.5.1-pre.2
         - 1.5.1-pre.3
+        - 1.5.2
+        - 1.6.0-pre.1
         compatible:
         - 1.2.6
         - 1.2.7
@@ -583,6 +588,7 @@ m_PackageAssets:
         - 1.2.15
         - 1.2.16
         - 1.2.17
+        - 1.2.18
         - 1.3.0-preview.2
         - 1.3.0-preview.3
         - 1.3.0-preview.5
@@ -595,6 +601,7 @@ m_PackageAssets:
         - 1.3.4
         - 1.3.5
         - 1.3.6
+        - 1.3.7
         - 1.4.0-preview.1
         - 1.4.0-preview.2
         - 1.4.0-preview.3
@@ -607,6 +614,7 @@ m_PackageAssets:
         - 1.4.3
         - 1.4.4
         - 1.4.5
+        - 1.4.6
         - 1.5.0-pre.2
         - 1.5.0-preview.1
         - 1.5.0-preview.2
@@ -616,7 +624,9 @@ m_PackageAssets:
         - 1.5.1-pre.1
         - 1.5.1-pre.2
         - 1.5.1-pre.3
-        verified: 1.3.6
+        - 1.5.2
+        - 1.6.0-pre.1
+        verified: 1.3.7
       dependencies: []
       resolvedDependencies: []
       keywords:
