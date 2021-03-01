@@ -15,7 +15,8 @@ public class Planet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown (0)) {
+        if (Input.GetMouseButtonDown(0))
+        {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
@@ -26,8 +27,8 @@ public class Planet : MonoBehaviour
                     Debug.Log("Hello hello");
                     foreach (GameObject ship in GameObject.FindGameObjectsWithTag("Ship"))
                     {
-                        if(ship.GetComponent<Vehicule>().isActive == true)
-                        {  
+                        if (ship.GetComponent<Vehicule>().isActive == true)
+                        {
                             ship.GetComponent<Vehicule>().setTargetPlanet(this.gameObject);
                         }
                     }
@@ -40,8 +41,8 @@ public class Planet : MonoBehaviour
     {
         foreach (GameObject ship in GameObject.FindGameObjectsWithTag("Ship"))
         {
-            if(ship.GetComponent<Vehicule>().isActive == true)
-            {  
+            if (ship.GetComponent<Vehicule>().isActive == true)
+            {
                 GetComponent<Renderer>().material.color = Color.blue;
             }
         }
