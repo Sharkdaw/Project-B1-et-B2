@@ -14,9 +14,15 @@ public class ResourcesManager : MonoBehaviour
     public Text ironText;
     public Text nickelText;
 
+    public Text timerText;
+    public float gameTime;
+
+    private bool stopTimer;
+
     // Start is called before the first frame update
     void Start()
     {
+        stopTimer = false;
     }
 
     // Update is called once per frame
@@ -24,6 +30,24 @@ public class ResourcesManager : MonoBehaviour
     {
         ironText.text = "Fer: " + iron.ToString();
         nickelText.text = "Nickel: " + nickel.ToString();
+
+        float time = gameTime - Time.time;
+
+        int minutes = Mathf.FloorToInt(time / 60);
+        int seconds = Mathf.FloorToInt(time - minutes * 60f);
+
+        string textTime = string.Format("{0:0}:{1:00}", minutes, seconds);
+
+        if (time <= 0)
+        {
+            stopTimer = true;
+        }
+
+        if (stopTimer == false)
+        {
+            timerText.text = textTime;
+
+        }
     }
 
     public void addResources(string name, int qte) {

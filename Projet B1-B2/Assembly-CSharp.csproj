@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ResourcesManager.cs" />
      <Compile Include="Assets\Scripts\CameraControllerZQSD.cs" />
+     <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\ZoomCam.cs" />
      <Compile Include="Assets\Scripts\Resources.cs" />
      <Compile Include="Assets\Scripts\Vehicule.cs" />
@@ -64,8 +65,8 @@
      <Compile Include="Assets\Scripts\Planet.cs" />
      <Compile Include="Assets\Scripts\Commands.cs" />
      <Compile Include="Assets\Scripts\CharacterMotor.cs" />
-     <Compile Include="Assets\Scripts\Building.cs" />
      <Compile Include="Assets\Scripts\PlanetRotation.cs" />
+     <Compile Include="Assets\Scripts\Building.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Martin/Documents/Projet Gestion B1 et B2/Projet B1-B2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
